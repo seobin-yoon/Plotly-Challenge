@@ -1,5 +1,5 @@
 function buildMetadata(sample) {
-    d3.json("data/samples.json").then((data) => {
+    d3.json("./data/samples.json").then((data) => {
 
         var selectMetaData = data.metadata.filter(sampleObj => sampleObj.id == sample);
 
@@ -16,7 +16,7 @@ function buildMetadata(sample) {
 }
 
 function buildPlot(sample) {
-    d3.json("data/samples.json").then((data) => {
+    d3.json("./data/samples.json").then((data) => {
         var result_list = data.samples.filter(sampleObj => sampleObj.id == sample);
         var sample_values = result_list[0].sample_values;
         var otu_ids = result_list[0].otu_ids;
@@ -86,7 +86,7 @@ function init() {
     
     var dropdownMenu = d3.select("#selDataset");
 
-    d3.json("data/samples.json").then((data) => {
+    d3.json("./data/samples.json").then((data) => {
         
         data.names.forEach((sample) => {
             dropdownMenu
